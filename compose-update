@@ -73,7 +73,7 @@ class FilesDefaultToStdin(click.Argument):
 
 
 @click.command()
-@click.option('--prune', '-p', default=False, help="Prune docker images after update process if set")
+@click.option('--prune', '-p', is_flag=True, help="Prune docker images after update process if set")
 @click.argument('update_dirs', cls=FilesDefaultToStdin)
 def update_composes(update_dirs, prune):
     """
